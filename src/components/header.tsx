@@ -2,7 +2,7 @@ import { Box, Image, Skeleton, Text } from "@chakra-ui/react";
 import { UrlInput } from "./UrlInput";
 import { BreadCrumbs } from "./BreadCrumbs";
 import { useAppSelector } from "../app/hooks";
-import star from "./../assets/star.svg";
+import star from "./../../public/assets/star.svg";
 import { useState } from "react";
 
 export const Header: React.FC = () => {

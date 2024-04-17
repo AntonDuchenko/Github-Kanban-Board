@@ -1,30 +1,65 @@
-# React + TypeScript + Vite
+# Github Kanban Board
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+[Demo Link]()
 
-Currently, two official plugins are available:
+This project is a simple React application that fetches repository data and issues from the GitHub API based on the provided repository URL. It displays the fetched issues in three columns: To do, In process, and Done. Additionally, users can drag and drop the issues between these columns, and the data is persisted using the browser's sessionStorage.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## Features
 
-## Expanding the ESLint configuration
+- Fetches repository data and issues from GitHub API.
+- Displays issues in three columns: To do, In process, and Done.
+- Allows users to drag and drop issues between columns.
+- Persists data using sessionStorage.
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
+## Technologies Used
 
-- Configure the top-level `parserOptions` property like this:
+- React
+- HTML5
+- GitHub API
+- Chakra UI
+- React beautiful dnd
 
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
-```
+## How to Use
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+1. Clone the repository:
+
+    ```bash
+    git clone https://github.com/AntonDuchenko/kanban_incode.git
+    ```
+
+2. Navigate to the project directory:
+
+    ```bash
+    cd project-directory
+    ```
+
+3. Install dependencies:
+
+    ```bash
+    npm install
+    ```
+
+4. Start the development server:
+
+    ```bash
+    npm start
+    ```
+
+5. Preview command open your browser on http://localhost:5173/.
+
+6. Enter the GitHub repository URL in the provided input field.
+
+7. Issues will be fetched and displayed in their respective columns.
+
+8. Drag and drop issues between columns to update their status.
+
+
+## Credits
+
+This project was created by [Duchenko Anton].
+
+## License
+
+This project is licensed under the MIT License.
+
+
