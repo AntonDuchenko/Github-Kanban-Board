@@ -52,6 +52,7 @@ export const UrlInput: React.FC<Props> = ({ url, setUrl }) => {
         <InputGroup size="lg" paddingTop="10px" marginBottom="20px">
           <InputLeftAddon>https://</InputLeftAddon>
           <Input
+            value={url}
             placeholder="Enter repo URL"
             marginRight="10px"
             onChange={handlerOnChange}
