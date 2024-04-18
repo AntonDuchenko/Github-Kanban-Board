@@ -14,6 +14,8 @@ This project is a simple React application that fetches repository data and issu
 ## Technologies Used
 
 - React
+- Typescript
+- Redux-Toolkit
 - HTML5
 - GitHub API
 - Chakra UI
