@@ -1,6 +1,6 @@
 # Github Kanban Board
 
-[Demo Link](https://antonduchenko.github.io/kanban_incode/)
+[Demo Link](https://antonduchenko.github.io/Github-Kanban-Board/)
 
 This project is a simple React application that fetches repository data and issues from the GitHub API based on the provided repository URL. It displays the fetched issues in three columns: To do, In process, and Done. Additionally, users can drag and drop the issues between these columns, and the data is persisted using the browser's sessionStorage.
 
@@ -14,6 +14,8 @@ This project is a simple React application that fetches repository data and issu
 ## Technologies Used
 
 - React
+- Typescript
+- Redux-Toolkit
 - HTML5
 - GitHub API
 - Chakra UI
