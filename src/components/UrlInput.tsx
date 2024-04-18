@@ -5,7 +5,7 @@ import {
   InputGroup,
   InputLeftAddon,
 } from "@chakra-ui/react";
-import { useAppDispatch } from "../app/hooks";
+import { useAppDispatch } from "../app/reduxHooks";
 import * as issuesSlice from "../features/issuesSlice";
 import * as repoSlice from "../features/repoSlice";
 
@@ -15,12 +15,12 @@ interface Props {
 }
 
 export const UrlInput: React.FC<Props> = ({ url, setUrl }) => {
-  const owner = url.split("/")[1];
-  const repo = url.split("/")[2];
+  const [, owner, repo] = url.split("/");
   const dispatch = useAppDispatch();
 
   const handlerOnSubmit = (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
+
     if (sessionStorage.getItem(`issues-${owner}-${repo}`)) {
       dispatch(
         issuesSlice.actions.setColumns(
@@ -51,12 +51,14 @@ export const UrlInput: React.FC<Props> = ({ url, setUrl }) => {
       <FormControl>
         <InputGroup size="lg" paddingTop="10px" marginBottom="20px">
           <InputLeftAddon>https://</InputLeftAddon>
+
           <Input
             value={url}
             placeholder="Enter repo URL"
             marginRight="10px"
             onChange={handlerOnChange}
           />
+
           <Button colorScheme="gray" inlineSize="150px" type="submit">
             Load issues
           </Button>

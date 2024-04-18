@@ -1,4 +1,4 @@
-export { Header } from "./header";
+export { Header } from "./Header";
 export { UrlInput } from "./UrlInput";
 export { BreadCrumbs } from "./BreadCrumbs";
 export { Item } from "./Item";

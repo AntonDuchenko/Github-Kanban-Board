@@ -8,8 +8,10 @@ interface Props {
 }
 
 export const Item: React.FC<Props> = ({ issue, index }) => {
+  const { id, title, number, user, comments } = issue;
+
   return (
-    <Draggable draggableId={issue.id.toString()} index={index}>
+    <Draggable draggableId={id.toString()} index={index}>
       {(provided) => (
         <ListItem
           ref={provided.innerRef}
@@ -27,11 +29,13 @@ export const Item: React.FC<Props> = ({ issue, index }) => {
           position="relative"
         >
           <Heading as="h3" size="sm">
-            {issue.title}
+            {title}
           </Heading>
-          <Text color="gray">#{issue.number}</Text>
+
+          <Text color="gray">#{number}</Text>
+
           <Text color="gray">
-            {issue.user.type} | Comments: {issue.comments}
+            {user.type} | Comments: {comments}
           </Text>
         </ListItem>
       )}

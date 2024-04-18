@@ -1,5 +1,3 @@
-/* eslint-disable no-param-reassign */
-/* eslint-disable @typescript-eslint/no-use-before-define */
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import { getIssues } from "../api/issues";
 import { Column, Issue } from "../types";
@@ -15,6 +13,13 @@ const initialState: InitialState = {
   loading: false,
   error: "",
 };
+
+export const init = createAsyncThunk(
+  "issues/fetch",
+  ({ owner, repo }: { owner: string; repo: string }) => {
+    return getIssues(owner, repo);
+  },
+);
 
 const IssuesSlice = createSlice({
   name: "columns",
@@ -70,10 +75,3 @@ const IssuesSlice = createSlice({
 
 export const { actions } = IssuesSlice;
 export default IssuesSlice.reducer;
-
-export const init = createAsyncThunk(
-  "issues/fetch",
-  ({ owner, repo }: { owner: string; repo: string }) => {
-    return getIssues(owner, repo);
-  },
-);

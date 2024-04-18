@@ -1,4 +1,5 @@
-/* eslint-disable @typescript-eslint/no-explicit-any */
+import { Assignee } from "./Assignee";
+
 interface User {
   login: string;
   id: number;
@@ -66,8 +67,8 @@ export interface Issue {
   labels: Label[];
   state: string;
   locked: boolean;
-  assignee: null;
-  assignees: any[];
+  assignee: Assignee | null;
+  assignees: Assignee[];
   milestone: null;
   comments: number;
   created_at: string;
