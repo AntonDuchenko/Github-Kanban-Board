@@ -5,9 +5,9 @@ import {
   InputGroup,
   InputLeftAddon,
 } from "@chakra-ui/react";
-import { useAppDispatch } from "../app/reduxHooks";
-import * as issuesSlice from "../features/issuesSlice";
-import * as repoSlice from "../features/repoSlice";
+import { useAppDispatch } from "../../app/reduxHooks";
+import * as issuesSlice from "../../features/issuesSlice";
+import * as repoSlice from "../../features/repoSlice";
 
 interface Props {
   url: string;

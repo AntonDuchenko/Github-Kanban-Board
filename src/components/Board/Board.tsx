@@ -5,9 +5,9 @@ import {
   Text,
   UnorderedList,
 } from "@chakra-ui/react";
-import { useAppSelector } from "../app/reduxHooks";
+import { useAppSelector } from "../../app/reduxHooks";
 import { Droppable } from "react-beautiful-dnd";
-import { Item } from "./Item";
+import { Item } from "../Item/Item";
 
 export const Board: React.FC = () => {
   const { loading: isLoading, columns } = useAppSelector(
@@ -15,7 +15,7 @@ export const Board: React.FC = () => {
   );
 
   return (
-    <Grid templateColumns="repeat(6, 1fr)" gap={6}>
+    <Grid templateColumns="repeat(6, 1fr)" gap={6} role="grid">
       {columns.map((column) => (
         <GridItem colSpan={2} key={column.id}>
           <Skeleton isLoaded={!isLoading} height="80vh" width="100%">
@@ -29,6 +29,7 @@ export const Board: React.FC = () => {
                   {(provided) => (
                     <div>
                       <UnorderedList
+                        role="list"
                         ref={provided.innerRef}
                         {...provided.droppableProps}
                         boxSizing="border-box"

@@ -1,5 +1,5 @@
 import { Breadcrumb, BreadcrumbItem, BreadcrumbLink } from "@chakra-ui/react";
-import { useAppSelector } from "../app/reduxHooks";
+import { useAppSelector } from "../../app/reduxHooks";
 
 interface Props {
   url: string;

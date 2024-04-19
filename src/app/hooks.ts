@@ -3,7 +3,7 @@ import { DropResult } from "react-beautiful-dnd";
 import { Column } from "../types";
 import { actions } from "../features/issuesSlice";
 import { AppDispatch, store } from "./store";
-import { saveToSessionStorage } from "../utils/saveToSessionStorage";
+import { saveToSessionStorage } from "../utils/saveToSessionStorage/saveToSessionStorage";
 
 export const useOnDragEnd = (columns: Column[], dispatch: AppDispatch) => {
   return useCallback(

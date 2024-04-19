@@ -1,6 +1,7 @@
 import { Heading, ListItem, Text } from "@chakra-ui/react";
-import { Issue } from "../types/Issue";
+import { Issue } from "../../types/Issue";
 import { Draggable } from "react-beautiful-dnd";
+import { calculateDays } from "../../utils/calculateDays/calculateDays";
 
 interface Props {
   issue: Issue;
@@ -8,7 +9,7 @@ interface Props {
 }
 
 export const Item: React.FC<Props> = ({ issue, index }) => {
-  const { id, title, number, user, comments } = issue;
+  const { id, title, number, user, comments, created_at: createdAt } = issue;
 
   return (
     <Draggable draggableId={id.toString()} index={index}>
@@ -32,7 +33,12 @@ export const Item: React.FC<Props> = ({ issue, index }) => {
             {title}
           </Heading>
 
-          <Text color="gray">#{number}</Text>
+          <Text color="gray">
+            #{number} opened{" "}
+            {calculateDays(createdAt) > 0
+              ? `${calculateDays(createdAt)} days ago`
+              : "today"}
+          </Text>
 
           <Text color="gray">
             {user.type} | Comments: {comments}

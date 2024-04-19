@@ -1,5 +1,5 @@
-import { store } from "../app/store";
-import { Column, Repo } from "../types";
+import { store } from "../../app/store";
+import { Column, Repo } from "../../types";
 
 export const saveToSessionStorage = (
   key: string,

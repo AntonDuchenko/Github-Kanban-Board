@@ -1,5 +1,5 @@
-export { Header } from "./Header";
-export { UrlInput } from "./UrlInput";
-export { BreadCrumbs } from "./BreadCrumbs";
-export { Item } from "./Item";
-export { Board } from "./Board";
+export { Header } from "./Header/Header";
+export { UrlInput } from "./UrlInput/UrlInput";
+export { BreadCrumbs } from "./BreadCrumbs/BreadCrumbs";
+export { Item } from "./Item/Item";
+export { Board } from "./Board/Board";

@@ -1,8 +1,8 @@
 import { Box, Image, Skeleton, Text } from "@chakra-ui/react";
-import { UrlInput } from "./UrlInput";
-import { BreadCrumbs } from "./BreadCrumbs";
-import { useAppSelector } from "../app/reduxHooks";
-import star from "./../../public/assets/star.svg";
+import { UrlInput } from "../UrlInput/UrlInput";
+import { BreadCrumbs } from "../BreadCrumbs/BreadCrumbs";
+import { useAppSelector } from "../../app/reduxHooks";
+import star from "../../../public/assets/star.svg";
 import { useState } from "react";
 
 export const Header: React.FC = () => {
@@ -11,7 +11,7 @@ export const Header: React.FC = () => {
   const { repo, loading: isLoading } = useAppSelector((state) => state.repo);
 
   return (
-    <Box marginBottom="20px">
+    <Box marginBottom="20px" role="header">
       <UrlInput url={url} setUrl={setUrl} />
 
       {repo && (
